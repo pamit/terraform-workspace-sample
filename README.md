@@ -33,6 +33,9 @@ $ docker ps -a
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS                  NAMES
 10265b9c7442   11deb5530100   "/docker-entrypoint.…"   3 seconds ago        Up 2 seconds        0.0.0.0:8080->80/tcp   nginx-server-test-0
 
+$ docker ps -q --no-trunc | grep  52a1265b17ee
+52a1265b17ee098e7a70bffbcb1ed7519987231cd00ee3589c4f8ddceaa0b306
+
 $ terraform destroy -var-file=$(terraform workspace show).tfvars
 Destroy complete! Resources: 1 destroyed
 ```
