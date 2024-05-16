@@ -11,7 +11,7 @@ terraform {
 # provider "docker" {}
 
 resource "docker_image" "nginx_image" {
-  name         = "nginx:latest"
+  name         = "nginx:1.25.5"
   keep_locally = true
 }
 
