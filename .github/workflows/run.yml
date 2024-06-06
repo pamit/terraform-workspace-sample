@@ -1,0 +1,13 @@
+# Using `act` to run GitHub Actions workflows locally
+# https://github.com/nektos/act
+
+name: Run
+
+on:
+  push:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/setup.yml
+    with:
+      foo: false

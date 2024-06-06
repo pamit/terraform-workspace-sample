@@ -1,0 +1,32 @@
+name: Setup
+
+on:
+  workflow_call:
+    inputs:
+      foo:
+        type: boolean
+        default: true
+        required: false
+
+jobs:
+  setup:
+    # runs-on: ubuntu-latest
+    runs-on: ${{ inputs.foo && fromJSON('["ubuntu-latest"]') || fromJSON('["ubuntu-latest"]') }}
+    env:
+      FOO: ${{ inputs.foo }}
+      OS: ${{ inputs.foo && 'ubuntu-latest' || 'windows-latest' }}
+    steps:
+      - name: Check value
+        run: |
+          echo "FOO is: $FOO"
+          echo "OS is: ${{ toJson(env.OS) }}"
+
+      - name: Run if foo - "${{ inputs.foo }}"
+        if: ${{ inputs.foo }}
+        run: |
+          echo "Foo is true"
+
+      - name: Run if !foo - "${{ inputs.foo }}"
+        if: ${{ inputs.foo == false }}
+        run: |
+          echo "Foo is false"
