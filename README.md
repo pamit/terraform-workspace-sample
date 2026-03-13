@@ -1,6 +1,8 @@
 # Terraform Workspace
 
-#### Refer to the article on Medium: https://pamit.medium.com/terraform-managing-state-and-workspaces-e806974c1ad3
+**Refer to the article on Medium:**
+
+https://pamit.medium.com/terraform-managing-state-and-workspaces-e806974c1ad3
 
 ```
 $ cd infra
